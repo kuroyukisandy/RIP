@@ -16,7 +16,7 @@ namespace RIP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new F_RIP());
+            Application.Run(new Form1());
         }
     }
 }

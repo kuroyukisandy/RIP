@@ -39,60 +39,58 @@ namespace RIP
         private void P_protocolo_MouseDown(object sender, MouseEventArgs e)
         {
             Graphics g = P_protocolo.CreateGraphics();
-
-            if (i >= 1)
-            {
-                selec=String.Empty;
-                i = 0;
-            }
-            else
-            {
-                if (selec==null)
+             try
                 {
-                    i++;
-                    MessageBox.Show("Elija una Herramienta");
-                }
-
-                if (selec.Equals("router") && nrouter <= 7 && selec!=null)
-                {
-                    nrouter += 1;
-                    i++;
-                    
-                    g.DrawImage(Image.FromFile(@"C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\Router.png"), new Rectangle(e.X, e.Y, 50, 50));
-                }
-                if(nrouter>7)
-                {
-                    MessageBox.Show("Ha excedido el numero de Routers 8");
-                }
-
-                if (selec.Equals("pc") && npc <= 2 && selec != null)
-                {
-                    npc += 1;
-                    i++;
-                    
-                    g.DrawImage(Image.FromFile(@"C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\Pc.png"), new Rectangle(e.X, e.Y, 50, 50));
-                }
-                if (npc > 2)
-                {
-                    MessageBox.Show("Ha excedido el numero de Equipos 3");
-                }
-
-                if (selec.Equals("cable") && selec != null)
-                {
-                    nrouter += 1;
-                    i++;
-                    
-                    Pen lapiz = new Pen(Color.Blue, 2);
-                    g.DrawRectangle(lapiz, new Rectangle(e.X, e.Y, 3, 3));
-                    lista.Add(new Point(e.X, e.Y));
-                    if (lista.Count > 1)
+/*                    if (i >= 1)
                     {
-                        g.DrawLine(lapiz, lista[lista.Count - 1], lista[lista.Count - 2]);
+                        selec = null;
+                        i = 0;
                     }
-                }
+                    else
+                    {*/
 
 
+                    if (selec.Equals("router"))
+                    {
+                        if (nrouter < 8)
+                        {
+                            i++;
+                            nrouter++;
+                            g.DrawImage(Image.FromFile(@"C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\Router.png"), new Rectangle(e.X, e.Y, 50, 50));
+                        }else
+                        {
+                            MessageBox.Show("Ha excedido el numero de routers 8");
+                        }
+                    }
+                       if (selec.Equals("pc"))
+                        {
+                            if (npc < 3)
+                            {
+                                npc++;
+                                i++;
+                                g.DrawImage(Image.FromFile(@"C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\Pc.png"), new Rectangle(e.X, e.Y, 50, 50));
+                            }
+                            else {
+                                MessageBox.Show("Ha excedido el numero de pc's 3");
+                            }
+                        }
+
+                        if (selec.Equals("cable"))
+                        {
+                            i++;
+                            Pen lapiz = new Pen(Color.Blue, 2);
+                            g.DrawRectangle(lapiz, new Rectangle(e.X, e.Y, 3, 3));
+                            
+                        }
+
+                }catch(Exception){
+
+                    MessageBox.Show("Elija una Herramienta");      
+                
             }
+
+             selec = null;
+             i = 0;
         }
 
 

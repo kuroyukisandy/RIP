@@ -60,7 +60,15 @@ namespace RIP
                         {
                             i++;
                             nrouter++;
-                            g.DrawImage(Image.FromFile(@"C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\Router.png"), new Rectangle(e.X, e.Y, 50, 50));
+                            PictureBox pb = new PictureBox();
+                            
+                            pb.Image = Image.FromFile(rutaAssets + "\\Router.png");
+                            pb.Location = new Point(e.X, e.Y);
+                            pb.Name="Router"+nrouter;
+                            pb.Click += new EventHandler(PB_Click);
+                            pb.DoubleClick += new EventHandler(PB_DoubleClick);
+                            P_protocolo.Controls.Add(pb);
+                            //g.DrawImage(Image.FromFile(rutaAssets+"\\Router.png"), new Rectangle(e.X, e.Y, 50, 50));
                         }else
                         {
                             MessageBox.Show("Ha excedido el numero de routers 8");
@@ -72,7 +80,7 @@ namespace RIP
                             {
                                 npc++;
                                 i++;
-                                g.DrawImage(Image.FromFile(@"C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\Pc.png"), new Rectangle(e.X, e.Y, 50, 50));
+                                g.DrawImage(Image.FromFile(rutaAssets+"\\Pc.png"), new Rectangle(e.X, e.Y, 50, 50));
                             }
                             else {
                                 MessageBox.Show("Ha excedido el numero de pc's 3");
@@ -95,6 +103,15 @@ namespace RIP
 
              selec = null;
              i = 0;
+        }
+
+        private void PB_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Prueba");
+        }
+        private void PB_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Dobleclick");
         }
 
 

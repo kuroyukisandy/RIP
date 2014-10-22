@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +17,11 @@ namespace RIP
         int nrouter = 0, npc = 0, i=0;
         String selec;
         List<Point> lista = new List<Point>();
+        String rutaAssets = String.Empty;
         public F_RIP()
         {
             InitializeComponent();
+            rutaAssets = Path.GetFullPath(ConfigurationSettings.AppSettings["assets"]);
 
         }
 

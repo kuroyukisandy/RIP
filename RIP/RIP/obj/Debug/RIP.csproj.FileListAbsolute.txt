@@ -1,0 +1,9 @@
+D:\Github\RIP\RIP\RIP\bin\Debug\RIP.exe.config
+D:\Github\RIP\RIP\RIP\obj\Debug\RIP.csprojResolveAssemblyReference.cache
+D:\Github\RIP\RIP\RIP\obj\Debug\RIP.F_RIP.resources
+D:\Github\RIP\RIP\RIP\obj\Debug\RIP.csproj.GenerateResource.Cache
+D:\Github\RIP\RIP\RIP\bin\Debug\RIP.exe
+D:\Github\RIP\RIP\RIP\bin\Debug\RIP.pdb
+D:\Github\RIP\RIP\RIP\obj\Debug\RIP.Properties.Resources.resources
+D:\Github\RIP\RIP\RIP\obj\Debug\RIP.exe
+D:\Github\RIP\RIP\RIP\obj\Debug\RIP.pdb

@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_RIP));
             this.B_cable = new System.Windows.Forms.Button();
             this.P_protocolo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.B_pc = new System.Windows.Forms.Button();
             this.B_router = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.P_protocolo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +58,14 @@
             this.P_protocolo.TabIndex = 3;
             this.P_protocolo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.P_protocolo_MouseDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 64);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // B_pc
             // 
             this.B_pc.Image = ((System.Drawing.Image)(resources.GetObject("B_pc.Image")));
@@ -77,14 +85,6 @@
             this.B_router.TabIndex = 0;
             this.B_router.UseVisualStyleBackColor = true;
             this.B_router.Click += new System.EventHandler(this.B_router_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(132, 121);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 64);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // F_RIP
             // 

@@ -7,3 +7,12 @@ D:\Github\RIP\RIP\RIP\bin\Debug\RIP.pdb
 D:\Github\RIP\RIP\RIP\obj\Debug\RIP.Properties.Resources.resources
 D:\Github\RIP\RIP\RIP\obj\Debug\RIP.exe
 D:\Github\RIP\RIP\RIP\obj\Debug\RIP.pdb
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\bin\Debug\RIP.exe.config
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.exe
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.pdb
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\bin\Debug\RIP.exe
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\bin\Debug\RIP.pdb
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.csprojResolveAssemblyReference.cache
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.F_RIP.resources
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.Properties.Resources.resources
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.csproj.GenerateResource.Cache

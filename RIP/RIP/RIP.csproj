@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cable.cs" />
     <Compile Include="F_RIP.cs">
       <SubType>Form</SubType>
     </Compile>

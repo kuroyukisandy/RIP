@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace RIP
 {
+
     public partial class F_RIP : Form
     {
         int nrouter = 0, npc = 0, i=0;
@@ -105,16 +106,16 @@ namespace RIP
              i = 0;
         }
 
-        private void PB_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Prueba");
-        }
+       private void PB_Click(object sender, EventArgs e)
+       {
+           MessageBox.Show("Prueba");
+       }
         private void PB_DoubleClick(object sender, EventArgs e)
         {
             MessageBox.Show("Dobleclick");
         }
 
 
-
     }
+
 }

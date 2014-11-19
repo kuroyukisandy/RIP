@@ -31,11 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_RIP));
             this.B_cable = new System.Windows.Forms.Button();
             this.P_protocolo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.B_pc = new System.Windows.Forms.Button();
             this.B_router = new System.Windows.Forms.Button();
-            this.P_protocolo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // B_cable
@@ -51,20 +48,11 @@
             // P_protocolo
             // 
             this.P_protocolo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.P_protocolo.Controls.Add(this.pictureBox1);
             this.P_protocolo.Location = new System.Drawing.Point(34, 80);
             this.P_protocolo.Name = "P_protocolo";
             this.P_protocolo.Size = new System.Drawing.Size(1062, 483);
             this.P_protocolo.TabIndex = 3;
             this.P_protocolo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.P_protocolo_MouseDown);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 64);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // B_pc
             // 
@@ -97,8 +85,6 @@
             this.Controls.Add(this.B_router);
             this.Name = "F_RIP";
             this.Text = "Form1";
-            this.P_protocolo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -109,7 +95,6 @@
         private System.Windows.Forms.Button B_pc;
         private System.Windows.Forms.Button B_cable;
         private System.Windows.Forms.Panel P_protocolo;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

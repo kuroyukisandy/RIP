@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RIP
 {
-    class Cable
+    public class Cable
     {
 
         public double delay { get; set; }
@@ -15,14 +15,21 @@ namespace RIP
 
         public double traf { get; set; }
 
+        public string origen { get; set; }
 
-      public void cable( double velocidad, double trafico, double retardo)
+        public string destino { get; set; }
+
+
+      public void cable( double velocidad, double trafico, double retardo, String canal1, String canal2)
         {
             delay = retardo;
             v = velocidad;
             traf= trafico;
-
+            origen = canal1;
+            destino = canal2;
         }
+
+
 
 
     }

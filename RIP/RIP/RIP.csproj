@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cable.cs" />
+    <Compile Include="F_config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_config.Designer.cs">
+      <DependentUpon>F_config.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_RIP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +59,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F_config.resx">
+      <DependentUpon>F_config.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_RIP.resx">
       <DependentUpon>F_RIP.cs</DependentUpon>
     </EmbeddedResource>

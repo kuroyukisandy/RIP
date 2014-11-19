@@ -16,3 +16,4 @@ C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.csprojResolveAssembly
 C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.F_RIP.resources
 C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.Properties.Resources.resources
 C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.csproj.GenerateResource.Cache
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.F_config.resources

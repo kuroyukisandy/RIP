@@ -119,6 +119,7 @@
             this.TB_velocidad.Name = "TB_velocidad";
             this.TB_velocidad.Size = new System.Drawing.Size(100, 20);
             this.TB_velocidad.TabIndex = 10;
+            this.TB_velocidad.Text = "5";
             // 
             // TB_trafico
             // 

@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_RIP));
-            this.B_cable = new System.Windows.Forms.Button();
+            this.B_Ping = new System.Windows.Forms.Button();
             this.P_protocolo = new System.Windows.Forms.Panel();
             this.B_pc = new System.Windows.Forms.Button();
             this.B_router = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // B_cable
+            // B_Ping
             // 
-            this.B_cable.Location = new System.Drawing.Point(190, 12);
-            this.B_cable.Name = "B_cable";
-            this.B_cable.Size = new System.Drawing.Size(72, 62);
-            this.B_cable.TabIndex = 2;
-            this.B_cable.Text = "Cableado";
-            this.B_cable.UseVisualStyleBackColor = true;
-            this.B_cable.Click += new System.EventHandler(this.B_cable_Click);
+            this.B_Ping.Location = new System.Drawing.Point(190, 12);
+            this.B_Ping.Name = "B_Ping";
+            this.B_Ping.Size = new System.Drawing.Size(72, 62);
+            this.B_Ping.TabIndex = 2;
+            this.B_Ping.Text = "Ping";
+            this.B_Ping.UseVisualStyleBackColor = true;
+            this.B_Ping.Click += new System.EventHandler(this.B_Ping_Click);
             // 
             // P_protocolo
             // 
@@ -80,7 +80,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 575);
             this.Controls.Add(this.P_protocolo);
-            this.Controls.Add(this.B_cable);
+            this.Controls.Add(this.B_Ping);
             this.Controls.Add(this.B_pc);
             this.Controls.Add(this.B_router);
             this.Name = "F_RIP";
@@ -93,7 +93,7 @@
 
         private System.Windows.Forms.Button B_router;
         private System.Windows.Forms.Button B_pc;
-        private System.Windows.Forms.Button B_cable;
+        private System.Windows.Forms.Button B_Ping;
         private System.Windows.Forms.Panel P_protocolo;
     }
 }

@@ -124,7 +124,7 @@ namespace RIP
 
        private void PB_Click(object sender, EventArgs e)
        {
-           Graphics g = P_protocolo.CreateGraphics();
+           
            l++;
            
 
@@ -142,7 +142,7 @@ namespace RIP
                    //MessageBox.Show("click uno");
                }
 
-               if (l == 2)
+                if (l == 2)
                {
                    String nombre2 = pb.Name.ToString();
 
@@ -215,17 +215,15 @@ namespace RIP
                    {
                        vector2[0] = pb.Bounds.X + 25;
                        vector2[1] = pb.Bounds.Y + 25;
-                       Pen lapiz = new Pen(Color.Blue, 2);
-                       g.DrawLine(lapiz, vector1[0], vector1[1], vector2[0], vector2[1]);
                        cable.destino = nombre2;
                        int trafic = trafico();
                        int delay = retardo();
                        cable.traf = trafic;
                        cable.delay = delay;
 
-                       F_config config = new F_config(cable);
-
+                       F_config config = new F_config(cable,vector1,vector2);
                        config.ShowDialog();
+
                        l = 0;
                        vector1[0] = 0;
                        vector2[1] = 0;
@@ -256,6 +254,16 @@ namespace RIP
             return delay;
         }
 
+        public void cableado(bool valida,int[] vector1,int[]vector2) 
+        {
+            if (valida)
+            {
+                Graphics g = P_protocolo.CreateGraphics();
+                Pen lapiz = new Pen(Color.Blue, 2);
+                g.DrawLine(lapiz, vector1[0], vector1[1], vector2[0], vector2[1]);
+            }
+            
+        }
     }
 
 }

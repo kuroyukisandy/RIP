@@ -31,13 +31,11 @@
             this.L_titulo = new System.Windows.Forms.Label();
             this.L_Origen = new System.Windows.Forms.Label();
             this.L_destino = new System.Windows.Forms.Label();
-            this.L_saltos = new System.Windows.Forms.Label();
             this.L_velocidad = new System.Windows.Forms.Label();
             this.L_trafico = new System.Windows.Forms.Label();
             this.L_retardo = new System.Windows.Forms.Label();
             this.TB_origen = new System.Windows.Forms.TextBox();
             this.TB_destino = new System.Windows.Forms.TextBox();
-            this.TB_saltos = new System.Windows.Forms.TextBox();
             this.TB_velocidad = new System.Windows.Forms.TextBox();
             this.TB_trafico = new System.Windows.Forms.TextBox();
             this.TB_retardo = new System.Windows.Forms.TextBox();
@@ -57,7 +55,7 @@
             // L_Origen
             // 
             this.L_Origen.AutoSize = true;
-            this.L_Origen.Location = new System.Drawing.Point(42, 49);
+            this.L_Origen.Location = new System.Drawing.Point(35, 49);
             this.L_Origen.Name = "L_Origen";
             this.L_Origen.Size = new System.Drawing.Size(38, 13);
             this.L_Origen.TabIndex = 1;
@@ -66,25 +64,16 @@
             // L_destino
             // 
             this.L_destino.AutoSize = true;
-            this.L_destino.Location = new System.Drawing.Point(42, 74);
+            this.L_destino.Location = new System.Drawing.Point(35, 78);
             this.L_destino.Name = "L_destino";
             this.L_destino.Size = new System.Drawing.Size(43, 13);
             this.L_destino.TabIndex = 2;
             this.L_destino.Text = "Destino";
             // 
-            // L_saltos
-            // 
-            this.L_saltos.AutoSize = true;
-            this.L_saltos.Location = new System.Drawing.Point(49, 100);
-            this.L_saltos.Name = "L_saltos";
-            this.L_saltos.Size = new System.Drawing.Size(36, 13);
-            this.L_saltos.TabIndex = 3;
-            this.L_saltos.Text = "Saltos";
-            // 
             // L_velocidad
             // 
             this.L_velocidad.AutoSize = true;
-            this.L_velocidad.Location = new System.Drawing.Point(29, 126);
+            this.L_velocidad.Location = new System.Drawing.Point(31, 98);
             this.L_velocidad.Name = "L_velocidad";
             this.L_velocidad.Size = new System.Drawing.Size(54, 13);
             this.L_velocidad.TabIndex = 4;
@@ -93,7 +82,7 @@
             // L_trafico
             // 
             this.L_trafico.AutoSize = true;
-            this.L_trafico.Location = new System.Drawing.Point(45, 152);
+            this.L_trafico.Location = new System.Drawing.Point(40, 123);
             this.L_trafico.Name = "L_trafico";
             this.L_trafico.Size = new System.Drawing.Size(40, 13);
             this.L_trafico.TabIndex = 5;
@@ -102,7 +91,7 @@
             // L_retardo
             // 
             this.L_retardo.AutoSize = true;
-            this.L_retardo.Location = new System.Drawing.Point(40, 179);
+            this.L_retardo.Location = new System.Drawing.Point(35, 151);
             this.L_retardo.Name = "L_retardo";
             this.L_retardo.Size = new System.Drawing.Size(45, 13);
             this.L_retardo.TabIndex = 6;
@@ -110,7 +99,7 @@
             // 
             // TB_origen
             // 
-            this.TB_origen.Location = new System.Drawing.Point(86, 49);
+            this.TB_origen.Location = new System.Drawing.Point(91, 49);
             this.TB_origen.Name = "TB_origen";
             this.TB_origen.ReadOnly = true;
             this.TB_origen.Size = new System.Drawing.Size(100, 20);
@@ -118,30 +107,22 @@
             // 
             // TB_destino
             // 
-            this.TB_destino.Location = new System.Drawing.Point(86, 75);
+            this.TB_destino.Location = new System.Drawing.Point(91, 75);
             this.TB_destino.Name = "TB_destino";
             this.TB_destino.ReadOnly = true;
             this.TB_destino.Size = new System.Drawing.Size(100, 20);
             this.TB_destino.TabIndex = 8;
             // 
-            // TB_saltos
-            // 
-            this.TB_saltos.Location = new System.Drawing.Point(86, 100);
-            this.TB_saltos.Name = "TB_saltos";
-            this.TB_saltos.ReadOnly = true;
-            this.TB_saltos.Size = new System.Drawing.Size(100, 20);
-            this.TB_saltos.TabIndex = 9;
-            // 
             // TB_velocidad
             // 
-            this.TB_velocidad.Location = new System.Drawing.Point(86, 126);
+            this.TB_velocidad.Location = new System.Drawing.Point(91, 101);
             this.TB_velocidad.Name = "TB_velocidad";
             this.TB_velocidad.Size = new System.Drawing.Size(100, 20);
             this.TB_velocidad.TabIndex = 10;
             // 
             // TB_trafico
             // 
-            this.TB_trafico.Location = new System.Drawing.Point(86, 152);
+            this.TB_trafico.Location = new System.Drawing.Point(91, 127);
             this.TB_trafico.Name = "TB_trafico";
             this.TB_trafico.ReadOnly = true;
             this.TB_trafico.Size = new System.Drawing.Size(100, 20);
@@ -149,7 +130,7 @@
             // 
             // TB_retardo
             // 
-            this.TB_retardo.Location = new System.Drawing.Point(86, 179);
+            this.TB_retardo.Location = new System.Drawing.Point(91, 153);
             this.TB_retardo.Name = "TB_retardo";
             this.TB_retardo.ReadOnly = true;
             this.TB_retardo.Size = new System.Drawing.Size(100, 20);
@@ -157,6 +138,7 @@
             // 
             // B_aceptar
             // 
+            this.B_aceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.B_aceptar.Location = new System.Drawing.Point(52, 219);
             this.B_aceptar.Name = "B_aceptar";
             this.B_aceptar.Size = new System.Drawing.Size(75, 23);
@@ -174,6 +156,7 @@
             this.B_cancelar.TabIndex = 14;
             this.B_cancelar.Text = "Cancelar";
             this.B_cancelar.UseVisualStyleBackColor = true;
+            this.B_cancelar.Click += new System.EventHandler(this.B_cancelar_Click);
             // 
             // F_config
             // 
@@ -187,13 +170,11 @@
             this.Controls.Add(this.TB_retardo);
             this.Controls.Add(this.TB_trafico);
             this.Controls.Add(this.TB_velocidad);
-            this.Controls.Add(this.TB_saltos);
             this.Controls.Add(this.TB_destino);
             this.Controls.Add(this.TB_origen);
             this.Controls.Add(this.L_retardo);
             this.Controls.Add(this.L_trafico);
             this.Controls.Add(this.L_velocidad);
-            this.Controls.Add(this.L_saltos);
             this.Controls.Add(this.L_destino);
             this.Controls.Add(this.L_Origen);
             this.Controls.Add(this.L_titulo);
@@ -209,13 +190,11 @@
         private System.Windows.Forms.Label L_titulo;
         private System.Windows.Forms.Label L_Origen;
         private System.Windows.Forms.Label L_destino;
-        private System.Windows.Forms.Label L_saltos;
         private System.Windows.Forms.Label L_velocidad;
         private System.Windows.Forms.Label L_trafico;
         private System.Windows.Forms.Label L_retardo;
         private System.Windows.Forms.TextBox TB_origen;
         private System.Windows.Forms.TextBox TB_destino;
-        private System.Windows.Forms.TextBox TB_saltos;
         private System.Windows.Forms.TextBox TB_velocidad;
         private System.Windows.Forms.TextBox TB_trafico;
         private System.Windows.Forms.TextBox TB_retardo;

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
 using System.IO;
@@ -13,6 +12,8 @@ namespace RIP
     {
         int nrouter = 0, npc = 0, i=0,l=0, j=0 , k = 0, n=0;
         ArrayList cables = new ArrayList();
+        ArrayList conec = new ArrayList();
+        ArrayList rutas = new ArrayList();
         String selec;
         String rutaAssets = String.Empty;
         int[] vector1 = new int[2];
@@ -270,23 +271,71 @@ namespace RIP
 
         private void B_Ping_Click(object sender, EventArgs e)
         {
+            
             F_Ping ping = new F_Ping();
             ping.ShowDialog();
             if (ping.DialogResult == DialogResult.OK)
             {
                 String origen = ping.origenp;
                 String destino = ping.destinop;
-                CreaRutas(origen,destino);
-                
+                CreaRutas(origen,destino);               
             }
         }
 
         private void CreaRutas(String origen,String destino)
         {
+           String des="",org=origen;
+           bool valid=true;
+
+            while(des!=destino)
+            {
+                ArrayList al=listarconec(org);
+                foreach (Cable r in al)
+                {
+                    if (al.Count > 1)
+                    {
+                        foreach(Cable z in rutas){
+                            if (r == z)
+                            {
+                                valid = false;
+                            }
+                            else {
+                                valid = true;
+                            }
+                        }
+                        if(valid)
+                        {
+                            rutas.Add(r);
+                            org = r.destino;
+                            des = r.destino;
+                            break;
+                        }
+                        
+                    }
+                    else {
+                        rutas.Add(r);
+                        org = r.destino;
+                    }
+                    des = r.destino;
+                }
+
+                
+            }
+                        
+        }
+
+        private ArrayList listarconec(String origen) {
+
+            conec.Clear();
             foreach (Cable c in cables)
             {
-                if(c.origen)
+                if (c.origen == origen || c.destino == origen)
+                {
+                    conec.Add(c);
+                }
             }
+
+            return conec;
         }
     }
 

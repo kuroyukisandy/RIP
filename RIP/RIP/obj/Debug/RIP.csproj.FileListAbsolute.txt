@@ -19,3 +19,4 @@ C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.csproj.GenerateResour
 C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.F_config.resources
 D:\Github\RIP\RIP\RIP\obj\Debug\RIP.F_config.resources
 D:\Github\RIP\RIP\RIP\obj\Debug\RIP.F_Ping.resources
+C:\Users\SANDRA\Documents\GitHub\RIP\RIP\RIP\obj\Debug\RIP.F_Ping.resources

@@ -10,10 +10,12 @@ namespace RIP
 
     public partial class F_RIP : Form
     {
-        int nrouter = 0, npc = 0, i=0,l=0, j=0 , k = 0, n=0;
+        int nrouter = 0, npc = 0, i = 0, l = 0, j = 0, n = 0;
         ArrayList cables = new ArrayList();
         ArrayList conec = new ArrayList();
         ArrayList rutas = new ArrayList();
+        ArrayList numrutas = new ArrayList();
+        ArrayList auxrutas = new ArrayList();
         String selec;
         String rutaAssets = String.Empty;
         int[] vector1 = new int[2];
@@ -190,15 +192,21 @@ namespace RIP
                             }
                         }
                     }
+
                     if (cable.origen.StartsWith("Router") && nombre2.StartsWith("Router"))
                     {
-                        k++;
-                        if (k == 4)
+                        foreach (Cable c in cables)
                         {
-                            MessageBox.Show("Conex Router-Router ya existe");
-                            cond = false;
-                            cables.RemoveAt(cables.Count - 1);
-                            l = 0;
+                            if (c.destino != null)
+                            {
+                                if ((c.destino.Equals(cable.origen)&&c.origen.Equals(nombre2))||(c.destino.Equals(nombre2) && c.origen.Equals(cable.origen)))
+                                {
+                                    MessageBox.Show("Conex Router-Router ya existe");
+                                    cond = false;
+                                    cables.RemoveAt(cables.Count - 1);
+                                    l = 0;
+                                }
+                            }
                         }
                     }
 
@@ -271,7 +279,6 @@ namespace RIP
 
         private void B_Ping_Click(object sender, EventArgs e)
         {
-            
             F_Ping ping = new F_Ping();
             ping.ShowDialog();
             if (ping.DialogResult == DialogResult.OK)
@@ -284,28 +291,51 @@ namespace RIP
 
         private void CreaRutas(String origen,String destino)
         {
+           
            String des="",org=origen;
            bool valid=true;
-
+            
             while(des!=destino)
             {
                 ArrayList al=listarconec(org);
                 foreach (Cable r in al)
                 {
+                    //if (origen == r.origen) { j = listarconec(r.destino).Count;}
                     if (al.Count > 1)
                     {
-                        foreach(Cable z in rutas){
-                            if (r == z)
+                        if (numrutas.Count > 0)
+                        {
+                            foreach (Cable z in rutas)
                             {
-                                valid = false;
+                                if (auxrutas.IndexOf(r) != -1 || r == z || r.destino == org)
+                                {
+                                    if (r.destino != destino)
+                                    {
+                                        valid = false;
+                                    }
+                                    else { valid = true;}
+                                }
+                                else { valid = true; }
                             }
-                            else {
-                                valid = true;
-                            }
+                            
                         }
+                        else {
+                            foreach (Cable z in rutas)
+                            {
+                                if (r == z || r.destino == org)
+                                {
+                                    valid = false;
+                                }
+                                else { valid = true; }
+                            }
+                            
+                        
+                        }
+
                         if(valid)
                         {
                             rutas.Add(r);
+                            auxrutas.Add(r);
                             org = r.destino;
                             des = r.destino;
                             break;
@@ -321,7 +351,29 @@ namespace RIP
 
                 
             }
-                        
+            ArrayList aux = new ArrayList(rutas);
+            Ruteo routs = new Ruteo();
+            routs.begin = origen;
+            routs.end = destino;
+            routs.lruta=aux;
+            routs.nsalto = rutas.Count-1;
+            numrutas.Add(routs);
+            rutas.Clear();
+/*          routs.begin =null;
+            routs.end = null;            
+            routs.nsalto = 0;*/
+
+            if (auxrutas.Count <= (Math.Pow(2, numrutas.Count)))
+            {
+                CreaRutas(origen, destino);
+            }
+            else {
+                foreach(Ruteo y in numrutas){
+                    Ruteo rut = new Ruteo();
+                    rut.calculoruta(y);
+                }
+            }
+            
         }
 
         private ArrayList listarconec(String origen) {

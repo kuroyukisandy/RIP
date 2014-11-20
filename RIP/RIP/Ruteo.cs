@@ -17,17 +17,13 @@ namespace RIP
 
         public string end { get; set; }
 
+
         public void ruteo(ArrayList rutas,int saltos,String inicio,String final)
         {
             begin = inicio;
             end = final;
             nsalto =saltos;
             lruta = rutas;
-        }
-
-        public void calculoruta(Ruteo ruts)
-        {
-            
         }
 
     }

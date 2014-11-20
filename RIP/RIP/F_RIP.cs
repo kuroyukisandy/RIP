@@ -16,6 +16,7 @@ namespace RIP
         ArrayList rutas = new ArrayList();
         ArrayList numrutas = new ArrayList();
         ArrayList auxrutas = new ArrayList();
+        ArrayList estadisticas = new ArrayList();
         String selec;
         String rutaAssets = String.Empty;
         int[] vector1 = new int[2];
@@ -300,7 +301,6 @@ namespace RIP
                 ArrayList al=listarconec(org);
                 foreach (Cable r in al)
                 {
-                    //if (origen == r.origen) { j = listarconec(r.destino).Count;}
                     if (al.Count > 1)
                     {
                         if (numrutas.Count > 0)
@@ -362,16 +362,13 @@ namespace RIP
 /*          routs.begin =null;
             routs.end = null;            
             routs.nsalto = 0;*/
-
-            if (auxrutas.Count <= (Math.Pow(2, numrutas.Count)))
+            
+            if (auxrutas.Count < (Math.Pow(2, numrutas.Count)))//--------------
             {
                 CreaRutas(origen, destino);
             }
             else {
-                foreach(Ruteo y in numrutas){
-                    Ruteo rut = new Ruteo();
-                    rut.calculoruta(y);
-                }
+                 calculoruta(numrutas);
             }
             
         }
@@ -389,6 +386,73 @@ namespace RIP
 
             return conec;
         }
+
+        public void calculoruta(ArrayList ruts)
+        {
+            estadisticas.Clear();
+            Estadisticas estads = new Estadisticas();
+            String camino="";
+            int i;
+            double sumavel = 0;
+            double sumatraf = 0;
+            double sumaret = 0;
+            double mayvel=0;
+            double mintraf=11;
+            double minret=11;
+            int jmp=11;
+            
+
+
+
+            foreach (Ruteo c in ruts)
+            {
+                i = 0;
+                sumavel = 0;
+                sumatraf = 0;
+                sumaret = 0;
+                camino = "";
+                foreach (Cable k in c.lruta)
+                {
+                    sumaret += k.delay;
+                    sumatraf += k.traf;
+                    sumavel += k.v;
+                    i++;
+                    camino += (k.origen + "-" + k.destino);
+                }
+
+
+                estads.hop = c.nsalto;
+                estads.vel = sumavel / i;
+                estads.traf = sumatraf / i;
+                estads.delay = sumaret / i;
+
+                estadisticas.Add(estads);
+            }
+                foreach (Estadisticas s in estadisticas) {
+                    if (s.vel > mayvel) {
+
+                        mayvel = s.vel;
+                        estads.rts=camino;
+
+                        if (s.delay < minret)
+                        {
+                            minret = s.delay;
+
+                            if (s.traf < mintraf)
+                            {
+                                mintraf = s.traf;
+                                if (s.hop < jmp) 
+                                {
+                                    jmp = s.hop;
+                                }
+                            }
+                        }
+                    }
+
+                }
+                MessageBox.Show("La mejor ruta es: " +camino );
+            }
+
     }
 
 }

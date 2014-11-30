@@ -59,15 +59,17 @@ namespace RIP
                             i++;
                             nrouter++;
                             PictureBox pbr = new PictureBox();
-                            Label lbl = new Label();
-                            
+                            Label lblR = new Label();
                             pbr.Image = Image.FromFile(rutaAssets + "\\Router.png");
                             pbr.Location = new Point(e.X, e.Y);
                             pbr.Name="Router"+nrouter;
+                            lblR.Text = pbr.Name;
+                            lblR.Location = new Point(e.X, (e.Y-15));
                             pbr.Size = new System.Drawing.Size(65, 50);
                             pbr.Click += new EventHandler(PB_Click);
                             pbr.DoubleClick += new EventHandler(PB_DoubleClick);
                             P_protocolo.Controls.Add(pbr);
+                            P_protocolo.Controls.Add(lblR);
                             //g.DrawImage(Image.FromFile(rutaAssets+"\\Router.png"), new Rectangle(e.X, e.Y, 50, 50));
                         }else
                         {
@@ -83,14 +85,17 @@ namespace RIP
                             npc++;
                             i++;
                             PictureBox pbc = new PictureBox();
-
+                            Label lblC = new Label();
                             pbc.Image = Image.FromFile(rutaAssets + "\\Pc.png");
                             pbc.Location = new Point(e.X, e.Y);
                             pbc.Name = "Pc" + npc;
+                            lblC.Text = pbc.Name;
+                            lblC.Location = new Point(e.X, (e.Y-15));
                             pbc.Size = new System.Drawing.Size(60, 50);
                             pbc.Click += new EventHandler(PB_Click);
                             pbc.DoubleClick += new EventHandler(PB_DoubleClick);
                             P_protocolo.Controls.Add(pbc);
+                            P_protocolo.Controls.Add(lblC);
                         }
                         else {
                             MessageBox.Show("Ha excedido el numero de pc's 3");
@@ -137,18 +142,29 @@ namespace RIP
 
                     if (cable.origen.StartsWith("Pc") && nombre2.StartsWith("Pc"))
                     {
+                        if (cable.origen.Equals(nombre2))
+                        {
+                            //ver datos del PC actual
+                            MessageBox.Show("este es el equipo " + cable.origen);
+                            cond = false;
+                            l = 0;
+                            cables.RemoveAt(cables.Count - 1);
+                            return;
+                        }
                         MessageBox.Show("No puede conectar 2 pc directamente");
                         cond = false;
                         l = 0;
-                        vector1[0] = 0;
-                        vector2[1] = 0;
-                        vector1[0] = 0;
-                        vector2[1] = 0;
-                        cable.destino = null;
-                        cable.origen = null;
+                        cables.RemoveAt(cables.Count - 1);
                         return;
                     }
-
+                    if (cable.origen.Equals(nombre2)) { 
+                        //ver datos del Router actual
+                        MessageBox.Show("este es el equipo "+cable.origen);
+                        cond = false;
+                        l = 0;
+                        cables.RemoveAt(cables.Count - 1);
+                        return;
+                    }
                     if (cable.origen.StartsWith("Pc") && nombre2.StartsWith("Router"))
                     {
                         //j++;

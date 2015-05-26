@@ -80,7 +80,7 @@ namespace RIP
                     //Dibujado del PC
                     if (selec.Equals("pc"))
                     {
-                        if (npc < 3)
+                        if (npc < 5)
                         {
                             npc++;
                             i++;
@@ -98,7 +98,7 @@ namespace RIP
                             P_protocolo.Controls.Add(lblC);
                         }
                         else {
-                            MessageBox.Show("Ha excedido el numero de pc's 3");
+                            MessageBox.Show("Ha excedido el numero de pc's 5");
                         }
                     }
 
@@ -226,6 +226,37 @@ namespace RIP
                             }
                         }
                     }
+
+                    if (cable.origen.StartsWith("Router") || nombre2.StartsWith("Router"))
+                    {
+                        int suma = 0;
+                        foreach (Cable c in cables)
+                        {
+                            if (c.destino != null)
+                            {
+                                suma = 0;
+                                string nomb = c.origen;
+                                foreach (Cable cab in cables)
+                                {
+                                    if (cab.origen.Equals(nomb) || (cab.destino != null && cab.destino.Equals(nomb)) || nombre2.Equals(nomb))
+                                        {
+                                            suma++;
+                                        }
+                                }
+                            }
+                            if (suma > 4)
+                            {
+                                MessageBox.Show("Ha excedido la cantidad de conexiones por router 4");
+                                cond = false; 
+                                cables.RemoveAt(cables.Count - 1);
+                                l = 0;
+                            }
+                        }
+
+                        
+                    }
+
+                
 
                 if (cond)
                 {

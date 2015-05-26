@@ -222,6 +222,7 @@ namespace RIP
                                     cond = false;
                                     cables.RemoveAt(cables.Count - 1);
                                     l = 0;
+                                    break;
                                 }
                             }
                         }
@@ -250,6 +251,7 @@ namespace RIP
                                 cond = false; 
                                 cables.RemoveAt(cables.Count - 1);
                                 l = 0;
+                                break;
                             }
                         }
 

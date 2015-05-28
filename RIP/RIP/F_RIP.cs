@@ -10,7 +10,7 @@ namespace RIP
 
     public partial class F_RIP : Form
     {
-        int nrouter = 0, npc = 0, i = 0, l = 0, j = 0, n = 0;
+        int nrouter = 0, npc = 0, i = 0, l = 0, j = 0, n = 0, tr=0;
         ArrayList cables = new ArrayList();
         ArrayList conec = new ArrayList();
         ArrayList rutas = new ArrayList();
@@ -267,7 +267,7 @@ namespace RIP
                     vector2[0] = pb.Bounds.X + 25;
                     vector2[1] = pb.Bounds.Y + 25;
                     cable.destino = nombre2;
-                    int trafic = trafico();
+                    string trafic = trafico();
                     int delay = retardo();
                     cable.traf = trafic;
                     cable.delay = delay;
@@ -302,11 +302,25 @@ namespace RIP
             //MessageBox.Show("Dobleclick");
         }
 
-        public int trafico()
+        public String trafico()
         {
             
-            int traf= rnd.Next(1, 10);
+            int t= rnd.Next(1,3);
+            string traf="";
+            switch (t)
+            {
+                case 3: traf = "alto";
+                break;
+                case 2: traf = "medio";
+                break;
+                case 1: traf = "bajo";
+                break;
+                   
+            }
+
+
             return traf;
+
         }
 
         public int retardo()
@@ -462,8 +476,17 @@ namespace RIP
                 camino = "";
                 foreach (Cable k in c.lruta)
                 {
+                    switch (k.traf)
+                    {
+                        case "alto": tr = 3;
+                        break;
+                        case "medio": tr = 2;
+                        break;
+                        case "bajo": tr = 1;
+                        break;
+                    }
                     sumaret += k.delay;
-                    sumatraf += k.traf;
+                    sumatraf += tr;
                     sumavel += k.v;
                     i++;
                     camino += (k.origen + "-" + k.destino);

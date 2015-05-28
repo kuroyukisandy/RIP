@@ -13,14 +13,14 @@ namespace RIP
 
         public double v { get; set; }
 
-        public double traf { get; set; }
+        public string traf { get; set; }
 
         public string origen { get; set; }
 
         public string destino { get; set; }
 
 
-      public void cable( double velocidad, double trafico, double retardo, String canal1, String canal2)
+      public void cable( double velocidad, string trafico, double retardo, String canal1, String canal2)
         {
             delay = retardo;
             v = velocidad;
